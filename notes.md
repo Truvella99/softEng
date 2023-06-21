@@ -1,11 +1,13 @@
 # Diagrams
 - [Context Diagram](#context-diagram)
 - [Requirements](#requirements)
-- [Class Diagram](#class-diagram)
+- [Class Diagram/Glossary](#class-diagramglossary)
 - [Use Case Diagram](#use-case-diagram)
 - [System Design](#system-design)
-- [Deployment Diagrma](#deployment-diagram)
+- [Deployment Diagram](#deployment-diagram)
 - [Summary](#summary)
+
+<h3><a href='#black-box-testing'>Testing</a></h3>
 
 ## Context Diagram
 - Defines what is inside the system to be developed and what is outside (not to be developed). Define only actor and how they interact (interfaces). For explore in details the system we use [system design](#system-design).
@@ -29,13 +31,14 @@
     - Maintainability: Effort needed to add/edit/delete software functions
     - Portability: Effort to redeploy application on another platform
     - Security: Protection from Malicious Access
+    - Also Domain NF requirement: Currency,Unit Of Measure,etc.
     - ![image](./nonFunctional.png)
 - <h3><a>ALL Non Functional Requirement must be measurable (ex. response time < 0,5 s)</a></h3>
 
-## Class Diagram
+## Class Diagram/Glossary
 - Describe main classes of the application and how they interact with each other. Each class has a brief description.
 - ![image](./classDiagram.png)
-
+- There can be several types of cardinalities:<br>![image](./cardinalities.png)
 ## Use Case Diagram
 - Show Interaction betweeen the Actors <b><a>(Same of the Context Diagram)</a></b> and Use cases
 - Example:
@@ -89,6 +92,8 @@
 - ![image](./summary.png)
 
 # Black Box testing:
+<h3><a href='#diagrams'>Diagrams</a></h3>
+
 ## Criteria
 - attribute (function parameter)
 ## Predicate
@@ -101,14 +106,14 @@
 
 # White Box testing:
 ## COVERAGE TYPES:
-- [Node](#node)
-- [Edge](#edge)
+- [Node](#node-statement)
+- [Edge](#edge-decision)
 - [Condition](#condition)
 - [Path](#path)
 - [Loop](#loop)
 - [Relationships](#coverage-relationships)
 
-### Node 
+### Node (Statement)
 - Atomic instruction. In case there are more consecutive instruction always executed they can be merged together.
 ``` <c>
 \\ can be merged in one node
@@ -119,7 +124,7 @@ int i = 0;
 - <b>Statement coverage = Node coverage. Synonims</b>
 ### Edge (Decision)
 - A link between nodes. Try to cover all decisions in the program with true and false.
-- All Possible decision: means all possible if or loop conditions
+- All Possible decision: means all possible if but also the else branch, or loop conditions
 ``` <c>
 if(x == true) {
     ...
@@ -144,8 +149,9 @@ if (age>60 and isRetired or isMarried) {
 - unfeasible if graph is cyclic. Approximations With Path–n (Ex. Path-4 == loop 0 to 4 times in each loop) or Loop coverage (In each loop cycle 0, 1 , >1 times)
 - ![image](./path.png)
 - <h3><a>COMPUTE NUMBER OF PATHS GENERAL RULES</a></h3>
- - if => add 1 path
- - if else => adds 2 paths
+ - if with return or throw statement => add 1 path
+ - if => add 2 paths
+ - if else => add 2 paths
  - loop as like in the example below, but there can be 1 extra path in case when is out of range and you don’t even enter the loop
 ```
 str = 'a'; => in this case i=1, i<str.length is false (str.lenght=1), SO ANOTHER PATH FOR BEING OUT OF RANGE
@@ -173,13 +179,14 @@ for (i = 0; i < 5; i++) {
             - if none of the above condition is satisfied.
     - 5 * 4 = 20 total loop iterations (loop_1_iteration * loop_2_iteration)
     - Number of Paths = (Paths per Iteration)^(total loop iteration) = 3^(5*4)
-
+- <h3><a>MORE ACCURATE FORMULA, BUT REQUIRE THE CONTROL FLOW GRAPH</h3></a>
+- ![image](./num_paths.png)
 ### Loop
 - select test cases such that every loop boundary and interior is tested.
 - 3 coverages (so formula x/3, try to reach 3 out of 3 by writing 3 test cases):
-    - 0 iterations
-    - 1 iteration
-    - '>' 1 iteration
+    - 0 iterations  Try No Enter
+    - 1 iteration   Enter 1
+    - '>' 1 iteration   Enter Many
 - Example:
 ``` <c>
 // scores ==> vector of double (float[] scores)
@@ -194,6 +201,20 @@ T3({}; ?) loops 0
 ```
 ## Coverage Relationships
 ![image](./relations.png)
+
+# ESTIMATION EXERCISES
+- FTE: full-time equivalent (equivalente of person expected to have in another phase, such as maintenance). When there is FTE, replace the normal amount of people involved in development with this, since in maintenance this is the amount of people to invest. 
+```
+6 The software application (app for user + server side) has been developed custom for the company managing
+the e-scooter service, over a 12 months period by 3 full time people. The company wants to operate the service
+for at least 7 years, and plans 1.5 FTE per year for maintenance.
+Where do you expect to have the largest part of costs ? (consider 1 year development +7 years maintenance,
+consider software costs only)
+
+    Development 12*3*1 = 36 person months = 3 person years
+    Maintenance: 12*1.5*7 = 126 person months = 10.5 person years
+    Maintenance costs are (according to these estimates) the major cost source
+```
 
 ## OTHER NOTES
 actor in context diagram ==> classes in design
