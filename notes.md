@@ -178,7 +178,7 @@ for (i = 0; i < 5; i++) {
             - if (answers[i][j] != solutions[i][j] && solutions[i][j] == 0)
             - if none of the above condition is satisfied.
     - 5 * 4 = 20 total loop iterations (loop_1_iteration * loop_2_iteration)
-    - Number of Paths = (Paths per Iteration)^(total loop iteration) = 3^(5*4)
+    - Number of Paths = (Paths per Iteration)^(total loop iteration) = 3^(5*4).     VALID ONLY WHEN PATHS PER ITERATION > 1
 - <h4><a>LOOP WITH ONE PATH EXAMPLE</a></h4>
     - here, according to previous formula, should be 1^(number of iteration)=1 In this way we are not taking into account the path that goes back in the loop.
     - correct way to handle this case:
