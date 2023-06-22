@@ -179,7 +179,12 @@ for (i = 0; i < 5; i++) {
             - if none of the above condition is satisfied.
     - 5 * 4 = 20 total loop iterations (loop_1_iteration * loop_2_iteration)
     - Number of Paths = (Paths per Iteration)^(total loop iteration) = 3^(5*4)
-- <h3><a>MORE ACCURATE FORMULA, BUT REQUIRE THE CONTROL FLOW GRAPH</h3></a>
+- <h4><a>LOOP WITH ONE PATH EXAMPLE</a></h4>
+    - here, according to previous formula, should be 1^(number of iteration)=1 In this way we are not taking into account the path that goes back in the loop.
+    - correct way to handle this case:
+- ![image](./loop_1_path.jpg)
+
+- <h3><a>MORE ACCURATE FORMULA, BUT REQUIRE THE CONTROL FLOW GRAPH (ONLY FOR LINEARLY INDEPENDENT PATHS)</h3></a>
 - ![image](./num_paths.png)
 ### Loop
 - select test cases such that every loop boundary and interior is tested.
