@@ -230,6 +230,8 @@ T3({}; ?) loops 0
 ![image](./relations.png)
 
 # ESTIMATION EXERCISES
+- 1 person month => 140 person hour
+- 1 year => 220 days (excluding christmas,easter,etc.)
 - FTE: full-time equivalent (equivalente of person expected to have in another phase, such as maintenance). When there is FTE, replace the normal amount of people involved in development with this, since in maintenance this is the amount of people to invest. 
 ```
 6 The software application (app for user + server side) has been developed custom for the company managing
@@ -242,6 +244,15 @@ consider software costs only)
     Maintenance: 12*1.5*7 = 126 person months = 10.5 person years
     Maintenance costs are (according to these estimates) the major cost source
 ```
+## Deliverables
+- Element to Deliver, but not crucial for the final goal prefixed
+- Example: Goal organize a trip
+    - Deliverable: buy museum ticket before depart: even if I forget about it, I can always buy the ticket there (maybe pay more but doesn't matter so much). My main goal (the trip) is not impacted by that, so Deliverable.
+
+## Milestones
+- Key Event, essential for the final goal.
+- Example: Goal organize a trip
+    - Milestone: having the passport: without it I cannot go to a trip and my entire goal (the trip) fails, so crucial event.
 
 ## OTHER NOTES
 actor in context diagram ==> classes in design
