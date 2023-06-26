@@ -229,11 +229,21 @@ T3({}; ?) loops 0
 ## Coverage Relationships
 ![image](./relations.png)
 
+# INTEGRATION TESTING 
+- Driver: Unit developed to pilot another unit (swapa unit over the current unit)
+- Stub: used to substitute another unit (swap a unit under the current unit). Must be simpler that the unit substituted.
+- ![image](./int_testing.png)
 # ESTIMATION EXERCISES
-- CALENDAR TIME = EFFORT/#PERSONS WORKING FULL TIME
-- EFFORT = CALENDAR TIME * #PERSONS WORKING FULL TIME
-- 1 person month => 140 person hour
-- 1 year => 220 days (excluding christmas,easter,etc.)
+- CALENDAR TIME: The duration measures the time needed to complete a project.
+    - Formula: EFFORT/#PERSONS WORKING FULL TIME
+- EFFORT: effort measures the amount of work needed to complete a project/task.
+    - Formula : CALENDAR TIME * #PERSONS WORKING FULL TIME
+- PRODUCTIVITY: Size/effort, where Size tipically are LOC (line of code).
+- TIPICAL CONVERSIONS (PH = person hours):
+    - 1 person day = 7 ph
+    - 1 person week = 35 ph
+    - 1 person month = 140 ph
+    - 1 person year = 1680 ph 220 days (excluding christmas,easter,etc.)
 - FTE: full-time equivalent (equivalente of person expected to have in another phase, such as maintenance). When there is FTE, replace the normal amount of people involved in development with this, since in maintenance this is the amount of people to invest. 
 ```
 6 The software application (app for user + server side) has been developed custom for the company managing
@@ -268,7 +278,7 @@ Greatest Person Days = 1800 Person Days
     - Deliverable: buy museum ticket before depart: even if I forget about it, I can always buy the ticket there (maybe pay more but doesn't matter so much). My main goal (the trip) is not impacted by that, so Deliverable.
 
 ## Milestones
-- Key Event, essential for the final goal.
+- Key Event, essential for the final goal, with effects on subsequent activities.
 - Example: Goal organize a trip
     - Milestone: having the passport: without it I cannot go to a trip and my entire goal (the trip) fails, so crucial event.
 
