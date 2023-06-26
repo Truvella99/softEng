@@ -230,6 +230,8 @@ T3({}; ?) loops 0
 ![image](./relations.png)
 
 # ESTIMATION EXERCISES
+- CALENDAR TIME = EFFORT/#PERSONS WORKING FULL TIME
+- EFFORT = CALENDAR TIME * #PERSONS WORKING FULL TIME
 - 1 person month => 140 person hour
 - 1 year => 220 days (excluding christmas,easter,etc.)
 - FTE: full-time equivalent (equivalente of person expected to have in another phase, such as maintenance). When there is FTE, replace the normal amount of people involved in development with this, since in maintenance this is the amount of people to invest. 
@@ -244,6 +246,22 @@ consider software costs only)
     Maintenance: 12*1.5*7 = 126 person months = 10.5 person years
     Maintenance costs are (according to these estimates) the major cost source
 ```
+- When there are 2 values, consider computing a range of the value (possible smallest one and possible greater one). Example:
+```
+The size of a project is estimated to be 600 FP. The project is developed in Java, past
+figures from the company tell that one FP is worth 20 to 30 LOC, and that productivity is 10-15
+LOC per person days. How many person days would be required for the project? (show steps
+followed to compute your answer). 
+
+LOC = N_FP * Size_FP ==> (goes from 600*20 to 600*30) = [12000,18000]
+Productivity goes from 10 to 15 LOC per person days = [10,15]
+Person Days = LOC/Productivity
+Smallest Value => Less LOC more productive [12000/15]
+Greatest Value => More LOC less productive [18000/10]
+Smallest Person Days = 800 Person Days
+Greatest Person Days = 1800 Person Days 
+```
+
 ## Deliverables
 - Element to Deliver, but not crucial for the final goal prefixed
 - Example: Goal organize a trip
