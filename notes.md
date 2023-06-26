@@ -183,6 +183,28 @@ for (i = 0; i < 5; i++) {
     - here, according to previous formula, should be 1^(number of iteration)=1 In this way we are not taking into account the path that goes back in the loop.
     - correct way to handle this case:
 - ![image](./loop_1_path.jpg)
+- <h4><a>HOWEWER, THIS FORMULA WORKS WHEN LOOP ARE INPUT CONTROLLED, SINCE WHEN NOT INPUT CONTROLLED, PATH IT'S ALWAYS THE SAME AND IS NOT COUNTED</a></h4>
+    - in this example, we have first not input controlled loop (1 path, always the same) and two nested for loop of 9 iterations. So, 1 * 2^(9*9) paths.
+```
+int main() {
+    int i, j;
+    char str[10][50], temp[50];
+    printf("Enter 10 words:");
+    for ( i = 0; i < 10; ++i )
+        gets(str[i]);
+    for( i = 0; i < 9; ++i )
+        for( j = i + 1; j < 10 ; ++j){
+            if ( strcmp( str[i] , str[j] ) > 0)
+            {
+            strcpy(temp, str[i]);
+            strcpy(str[i], str[j]);
+            strcpy(str[j], temp);
+            }
+        }
+    return 0;
+}
+
+```
 
 - <h3><a>MORE ACCURATE FORMULA, BUT REQUIRE THE CONTROL FLOW GRAPH (ONLY FOR LINEARLY INDEPENDENT PATHS)</h3></a>
 - ![image](./num_paths.png)
