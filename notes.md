@@ -39,6 +39,8 @@
 - Describe main classes of the application and how they interact with each other. Each class has a brief description.
 - ![image](./classDiagram.png)
 - There can be several types of cardinalities:<br>![image](./cardinalities.png)
+- <h3><a>MUST BE CONSISTENT WITH USE CASE DIAGRAM</a></h3>
+- ![image](./uc_class.png)
 ## Use Case Diagram
 - Show Interaction betweeen the Actors <b><a>(Same of the Context Diagram)</a></b> and Use cases
 - Example:
@@ -111,7 +113,8 @@
 - [Condition](#condition)
 - [Path](#path)
 - [Loop](#loop)
-- [Relationships](#coverage-relationships)
+
+## [Relationships](#coverage-relationships)
 
 ### Node (Statement)
 - Atomic instruction. In case there are more consecutive instruction always executed they can be merged together.
@@ -179,7 +182,7 @@ for (i = 0; i < 5; i++) {
             - if none of the above condition is satisfied.
     - 5 * 4 = 20 total loop iterations (loop_1_iteration * loop_2_iteration)
     - Number of Paths = (Paths per Iteration)^(total loop iteration) = 3^(5*4).     VALID ONLY WHEN PATHS PER ITERATION > 1
-- <h4><a>LOOP WITH ONE PATH EXAMPLE</a></h4>
+- <h4><a>LOOP WITH ONE PATH EXAMPLE (INPUT CONTROLLED)</a></h4>
     - here, according to previous formula, should be 1^(number of iteration)=1 In this way we are not taking into account the path that goes back in the loop.
     - correct way to handle this case:
 - ![image](./loop_1_path.jpg)
@@ -230,14 +233,14 @@ T3({}; ?) loops 0
 ![image](./relations.png)
 
 # INTEGRATION TESTING 
-- Driver: Unit developed to pilot another unit (swapa unit over the current unit)
+- Driver: Unit developed to pilot another unit (swap a unit over the current unit)
 - Stub: used to substitute another unit (swap a unit under the current unit). Must be simpler that the unit substituted.
 - ![image](./int_testing.png)
 # ESTIMATION EXERCISES
 - CALENDAR TIME: The duration measures the time needed to complete a project.
-    - Formula: EFFORT/#PERSONS WORKING FULL TIME
+    - Formula: EFFORT/#PERSONS WORKING
 - EFFORT: effort measures the amount of work needed to complete a project/task.
-    - Formula : CALENDAR TIME * #PERSONS WORKING FULL TIME
+    - Formula : CALENDAR TIME * #PERSONS WORKING
 - PRODUCTIVITY: Size/effort, where Size tipically are LOC (line of code).
 - TIPICAL CONVERSIONS (PH = person hours):
     - 1 person day = 7 ph
