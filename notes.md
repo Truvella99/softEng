@@ -237,7 +237,7 @@ T3({}; ?) loops 0
 - Stub: used to substitute another unit (swap a unit under the current unit). Must be simpler that the unit substituted.
 - ![image](./int_testing.png)
 # ESTIMATION EXERCISES
-- CALENDAR TIME: The duration measures the time needed to complete a project.
+- CALENDAR TIME (or DURATION): Measures the time needed to complete a project.
     - Formula: EFFORT/#PERSONS WORKING
 - EFFORT: effort measures the amount of work needed to complete a project/task.
     - Formula : CALENDAR TIME * #PERSONS WORKING
@@ -285,7 +285,11 @@ Greatest Person Days = 1800 Person Days
 - Example: Goal organize a trip
     - Milestone: having the passport: without it I cannot go to a trip and my entire goal (the trip) fails, so crucial event.
 
-## OTHER NOTES
+# OTHER NOTES
+## See Also
+[theory1](./domande%20teoria%20SE.pdf)<br>
+[theory2](./SOFTENG%20-%20Domande%20di%20Teoria.pdf)
+
 actor in context diagram ==> classes in design
 element in glossary => classes in design
 also there could be some classes
