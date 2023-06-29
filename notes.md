@@ -11,17 +11,17 @@
 
 ## Context Diagram
 - Defines what is inside the system to be developed and what is outside (not to be developed). Define only actor and how they interact (interfaces). For explore in details the system we use [system design](#system-design).
-    - ![image](./context.jpg)
+    - ![image](./media/context.jpg)
     - Outside elements are the actors, subset of the [stakeholders](#stakeholders).
     - Interactions betweeen inside and outside (system<->actors) is made with interfaces
-    - ![image](./interfaces.png)
+    - ![image](./media/interfaces.png)
 ### Stakeholders
 - Role person company or system that is directly or indirectly involved in the project and who may affect or get affected by the outcome of the project
 ## Requirements
 - what is inside the system, so what's inside the box of [context diagram](#context-diagram). Represents the list of functionality that we have to deliver. 
 ### Functional requirements
 - They describe the behaviour of the system.
-- ![image](./functional.png)
+- ![image](./media/functional.png)
 ### Non Functional Requirements
 - They Describe Costraint of the services/aplication/domain. They can Have 6 main propereties:
     - Functionality
@@ -32,26 +32,26 @@
     - Portability: Effort to redeploy application on another platform
     - Security: Protection from Malicious Access
     - Also Domain NF requirement: Currency,Unit Of Measure,etc.
-    - ![image](./nonFunctional.png)
+    - ![image](./media/nonFunctional.png)
 - <h3><a>ALL Non Functional Requirement must be measurable (ex. response time < 0,5 s)</a></h3>
 
 ## Class Diagram/Glossary
 - Describe main classes of the application and how they interact with each other. Each class has a brief description.
-- ![image](./classDiagram.png)
-- There can be several types of cardinalities:<br>![image](./cardinalities.png)
+- ![image](./media/classDiagram.png)
+- There can be several types of cardinalities:<br>![image](./media/cardinalities.png)
 - <h3><a>MUST BE CONSISTENT WITH USE CASE DIAGRAM</a></h3>
-- ![image](./uc_class.png)
+- ![image](./media/uc_class.png)
 ## Use Case Diagram
 - Show Interaction betweeen the Actors <b><a>(Same of the Context Diagram)</a></b> and Use cases
 - Example:
-- ![image](./ucDiagram.png)
+- ![image](./media/ucDiagram.png)
 - Actor from which the arrow starts: ACTIVE ACTOR (Ex. Cashier)
 - Actor who receive the arrow: PASSIVE ACTOR (Ex. Product)
 - different use cases linked together ==> we use `<<include>>`. This means that some scenario (1 or also all) in F1.1 will start F1.2 (another scenario) for example (also said that F1.1 pass the control to F1.2, and before F1 pass the control to F1.1). So more complete use cases can include more simple ones.
 - <h3>Other Relationships:</h3>
-- ![image](./ucd_relationships1.png)
-- ![image](./ucd_relationships2.png)
-- ![image](./ucd_relationships3.png) 
+- ![image](./media/ucd_relationships1.png)
+- ![image](./media/ucd_relationships2.png)
+- ![image](./media/ucd_relationships3.png) 
 - <h3><a>Use Cases and Scenario are used together to tell the whole story, so how everything works together</a></h3>
 ### Use Cases
 - Set of [scenarios](#scenarios) with common user goal. Functional unit, part of the system.
@@ -77,9 +77,9 @@
 - Lists all subsystem that are <h3><a>INSIDE</a></h3> the context diagram.
 - <h3><a>What is Inside System design cannot be in context diagram</a></h3>
 - Correct Example:
-- ![image](./system_design_ok.png)
+- ![image](./media/system_design_ok.png)
 - Wrong Example:
-- ![image](./system_design_wrong.png)
+- ![image](./media/system_design_wrong.png)
 
 ## Deployment Diagram
 - Tell what will be deployed and where the software will run. Composed of:
@@ -88,10 +88,10 @@
     - Software Component: Artifact (ex. Web Application)
     - Artifact are connected with Node. We say that the artifact is deployed on the Node.
     - Example:
-    - ![image](./deploymentDiagram.jpg)
+    - ![image](./media/deploymentDiagram.jpg)
 
 ## Summary
-- ![image](./summary.png)
+- ![image](./media/summary.png)
 
 # Black Box testing:
 <h3><a href='#diagrams'>Diagrams</a></h3>
@@ -144,13 +144,13 @@ if (age>60 and isRetired or isMarried) {
 ```
 - This Coverage can be Simple or Multiple. 
     - Simple ==> Each condition set at least once to T and F
-    - ![image](./simple.png)
+    - ![image](./media/simple.png)
     - Multiple ==> All combinations T/F are tried
-    - ![image](./multiple.png)
+    - ![image](./media/multiple.png)
 ### Path
 - sequence of nodes in a graph. select test cases such that every path in the graph is visited
 - unfeasible if graph is cyclic. Approximations With Path–n (Ex. Path-4 == loop 0 to 4 times in each loop) or Loop coverage (In each loop cycle 0, 1 , >1 times)
-- ![image](./path.png)
+- ![image](./media/path.png)
 - <h3><a>COMPUTE NUMBER OF PATHS GENERAL RULES</a></h3>
  - if with return or throw statement => add 1 path
  - if => add 2 paths
@@ -185,7 +185,7 @@ for (i = 0; i < 5; i++) {
 - <h4><a>LOOP WITH ONE PATH EXAMPLE (INPUT CONTROLLED)</a></h4>
     - here, according to previous formula, should be 1^(number of iteration)=1 In this way we are not taking into account the path that goes back in the loop.
     - correct way to handle this case:
-- ![image](./loop_1_path.jpg)
+- ![image](./media/loop_1_path.jpg)
 - <h4><a>HOWEWER, THIS FORMULA WORKS WHEN LOOP ARE INPUT CONTROLLED, SINCE WHEN NOT INPUT CONTROLLED, PATH IT'S ALWAYS THE SAME AND IS NOT COUNTED</a></h4>
     - in this example, we have first not input controlled loop (1 path, always the same) and two nested for loop of 9 iterations. So, 1 * 2^(9*9) paths.
 ```
@@ -210,7 +210,7 @@ int main() {
 ```
 
 - <h3><a>MORE ACCURATE FORMULA, BUT REQUIRE THE CONTROL FLOW GRAPH (ONLY FOR LINEARLY INDEPENDENT PATHS)</h3></a>
-- ![image](./num_paths.png)
+- ![image](./media/num_paths.png)
 ### Loop
 - select test cases such that every loop boundary and interior is tested.
 - 3 coverages (so formula x/3, try to reach 3 out of 3 by writing 3 test cases):
@@ -230,12 +230,12 @@ T3({}; ?) loops 0
 3/3 ==> Loop Coverage 100 %
 ```
 ## Coverage Relationships
-![image](./relations.png)
+![image](./media/relations.png)
 
 # INTEGRATION TESTING 
 - Driver: Unit developed to pilot another unit (swap a unit over the current unit)
 - Stub: used to substitute another unit (swap a unit under the current unit). Must be simpler that the unit substituted.
-- ![image](./int_testing.png)
+- ![image](./media/int_testing.png)
 # ESTIMATION EXERCISES
 - CALENDAR TIME (or DURATION): Measures the time needed to complete a project.
     - Formula: EFFORT/#PERSONS WORKING
@@ -287,8 +287,8 @@ Greatest Person Days = 1800 Person Days
 
 # OTHER NOTES
 ## See Also
-[theory1](./domande%20teoria%20SE.pdf)<br>
-[theory2](./SOFTENG%20-%20Domande%20di%20Teoria.pdf)
+[theory1](./media/domande%20teoria%20SE.pdf)<br>
+[theory2](./media/SOFTENG%20-%20Domande%20di%20Teoria.pdf)
 
 actor in context diagram ==> classes in design
 element in glossary => classes in design
